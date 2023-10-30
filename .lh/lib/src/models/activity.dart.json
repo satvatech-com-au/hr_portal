@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/src/models/activity.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1698659719312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1698659719312,
+            "name": "Commit-0",
+            "content": "class Activity {\n  final String title;\n  final String date;\n  final String time;\n  Activity({\n    required this.title,\n    required this.date,\n    required this.time,\n  });\n}\n\nfinal List<Activity> activities = [\n  Activity(\n    title: 'Meeting with Flutter team',\n    date: 'Wed, 12th June',\n    time: '9:15am',\n  ),\n  Activity(\n    title: 'Team Building Workshop',\n    date: 'Tue, 18th June',\n    time: '2:30pm',\n  ),\n  Activity(\n    title: 'Client Presentation',\n    date: 'Fri, 21st June',\n    time: '10:00am',\n  ),\n  Activity(\n    title: 'Training Session',\n    date: 'Mon, 24th June',\n    time: '3:45pm',\n  ),\n  Activity(\n    title: 'Project Kickoff Meeting',\n    date: 'Thu, 27th June',\n    time: '11:30am',\n  ),\n  Activity(\n    title: 'Team Lunch',\n    date: 'Wed, 3rd July',\n    time: '12:00pm',\n  ),\n  Activity(\n    title: 'Design Review',\n    date: 'Tue, 9th July',\n    time: '2:00pm',\n  ),\n  Activity(\n    title: 'Client Feedback Session',\n    date: 'Fri, 12th July',\n    time: '4:15pm',\n  ),\n  Activity(\n    title: 'Product Demo',\n    date: 'Mon, 15th July',\n    time: '10:30am',\n  ),\n  Activity(\n    title: 'Training Workshop',\n    date: 'Thu, 18th July',\n    time: '2:45pm',\n  ),\n];\n\n"
+        }
+    ]
+}

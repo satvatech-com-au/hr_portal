@@ -1,0 +1,26 @@
+{
+    "sourceFile": "lib/src/views/add_holiday.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1698671073777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698671087537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n             const Spacer(\n               flex: 4,\n             ),\n             ElevatedButton(\n-              style: ElevatedButton.styleFrom(fixedSize: const Size(300, 50)),\n+              style: ElevatedButton.styleFrom(fixedSize: const Size(280, 60)),\n               onPressed: () {\n                 _addHoliday(\n                   titleController.text,\n                   dateController.text,\n"
+                },
+                {
+                    "date": 1698671093806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n             const Spacer(\n               flex: 4,\n             ),\n             ElevatedButton(\n-              style: ElevatedButton.styleFrom(fixedSize: const Size(280, 60)),\n+              style: ElevatedButton.styleFrom(fixedSize: const Size(80, 60)),\n               onPressed: () {\n                 _addHoliday(\n                   titleController.text,\n                   dateController.text,\n"
+                }
+            ],
+            "date": 1698671073777,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\n\nclass AddHolidayScreen extends StatefulWidget {\n  const AddHolidayScreen({Key? key}) : super(key: key);\n\n  @override\n  _AddHolidayScreenState createState() => _AddHolidayScreenState();\n}\n\nclass _AddHolidayScreenState extends State<AddHolidayScreen> {\n  final titleController = TextEditingController();\n  DateTime? selectedDate;\n  final descriptionController = TextEditingController();\n\n  Future<void> _selectDate(BuildContext context) async {\n    final DateTime picked = (await showDatePicker(\n      context: context,\n      initialDate: selectedDate ?? DateTime.now(),\n      firstDate: DateTime(2000),\n      lastDate: DateTime(2101),\n    ))!;\n\n    if (picked != selectedDate) {\n      setState(() {\n        selectedDate = picked;\n        dateController.text = \"${picked.year}-${picked.month}-${picked.day}\";\n      });\n    }\n  }\n\n  final dateController = TextEditingController();\n\n  void _addHoliday(String title, String date, String description) {\n    setState(() {\n      holidays.add(Holiday(title: title, date: date));\n    });\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: const Text('Add New Holiday'),\n      ),\n      body: Padding(\n        padding: const EdgeInsets.all(16.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.stretch,\n          children: <Widget>[\n            TextFormField(\n              controller: titleController,\n              decoration: const InputDecoration(\n                labelText: 'Title',\n                border: OutlineInputBorder(),\n              ),\n            ),\n            const SizedBox(height: 20),\n            TextFormField(\n              controller: dateController,\n              decoration: const InputDecoration(\n                labelText: 'Date (YYYY-MM-DD)',\n                border: OutlineInputBorder(),\n              ),\n              onTap: () => _selectDate(context),\n            ),\n            const SizedBox(height: 20),\n            TextFormField(\n              controller: descriptionController,\n              decoration: const InputDecoration(\n                hintText: 'Description',\n                border: OutlineInputBorder(),\n              ),\n              maxLines: 10,\n            ),\n             Spacer(flex: 4,),\n            ElevatedButton(\n              style: ElevatedButton.styleFrom(fixedSize: const Size(300, 50)),\n              onPressed: () {\n                _addHoliday(\n                  titleController.text,\n                  dateController.text,\n                  descriptionController.text,\n                );\n                Navigator.of(context).pop();\n              },\n              child: const Text('Add Holiday'),\n            ),\n            Spacer(flex: 1,)\n          ],\n        ),\n      ),\n    );\n  }\n}\n\nclass Holiday {\n  final String title;\n  final String date;\n\n  Holiday({\n    required this.title,\n    required this.date,\n  });\n}\n\nList<Holiday> holidays = [\n  Holiday(title: 'Christmas', date: '2023-12-25'),\n  Holiday(title: \"New Year's Day\", date: '2024-01-01'),\n  Holiday(title: 'Thanksgiving', date: '2023-11-23'),\n  Holiday(title: 'Independence Day', date: '2023-07-04'),\n  Holiday(title: 'Labor Day', date: '2023-09-04'),\n];\n"
+        }
+    ]
+}

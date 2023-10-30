@@ -1,8 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:hr_app/src/views/add_annoucement.dart';
 import 'package:hr_app/src/views/add_member.dart';
+import 'package:hr_app/src/views/leave_applications.dart';
 import 'package:hr_app/src/views/members.dart';
 import 'package:hr_app/src/views/teams.dart';
+import 'package:hr_app/src/widgets/option_card.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -97,7 +100,7 @@ class Home extends StatelessWidget {
                   child: OptionCard(
                     imageUrl: 'assets/docs.png',
                     text: 'Manage Applications',
-                    route: TeamsScreen(),
+                    route: LeaveApplicationScreen(),
                   ),
                 )
               ],
@@ -160,84 +163,14 @@ class Home extends StatelessWidget {
             ),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(fixedSize: const Size(300, 50)),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AddAnnouncementScreen()));
+                },
                 child: const Text('Create announcement')),
             const Spacer(),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class OptionCard extends StatelessWidget {
-  final String imageUrl;
-  final String text;
-  final Widget route;
-  const OptionCard({
-    Key? key,
-    required this.imageUrl,
-    required this.text,
-    required this.route,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => route,
-            ));
-      },
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(
-                imageUrl,
-                height: 30,
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Text(
-                text,
-                textAlign: TextAlign.center,
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class OptionCard2 extends StatelessWidget {
-  final int figure;
-  final String parameter;
-  const OptionCard2({
-    Key? key,
-    required this.figure,
-    required this.parameter,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              figure.toString(),
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            Text(parameter, textAlign: TextAlign.center),
           ],
         ),
       ),

@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:hr_app/src/views/add_annoucement.dart';
-import 'package:hr_app/src/views/add_member.dart';
+import 'package:hr_app/src/views/create_annoucement.dart';
+import 'package:hr_app/src/views/create_member.dart';
 import 'package:hr_app/src/views/leave_applications.dart';
 import 'package:hr_app/src/views/members.dart';
 import 'package:hr_app/src/views/teams.dart';
@@ -155,7 +155,7 @@ class Home extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: ((context) => const MemberAddScreen())));
+                          builder: ((context) => const CreateMemberScreen())));
                 },
                 child: const Text('Create members')),
             const SizedBox(
@@ -167,7 +167,8 @@ class Home extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const AddAnnouncementScreen()));
+                          builder: (context) =>
+                              const CreateAnnouncementScreen()));
                 },
                 child: const Text('Create announcement')),
             const Spacer(),

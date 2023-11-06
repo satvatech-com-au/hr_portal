@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hr_app/src/views/add_annoucement.dart';
+import 'package:hr_app/src/views/create_annoucement.dart';
 
 class AnnouncementScreen extends StatelessWidget {
   const AnnouncementScreen({super.key});
@@ -24,7 +24,7 @@ class AnnouncementScreen extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => const AddAnnouncementScreen()));
+                  builder: (context) => const CreateAnnouncementScreen()));
         },
         child: const Icon(Icons.add),
       ),

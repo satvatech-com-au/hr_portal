@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hr_app/src/views/add_holiday.dart';
+import 'package:hr_app/src/views/create_holiday.dart';
 
 class HolidayScreen extends StatefulWidget {
   const HolidayScreen({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class _HolidayScreenState extends State<HolidayScreen> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => const AddHolidayScreen()));
+                  builder: (context) => const CreateHolidayScreen()));
         },
         child: const Icon(Icons.add),
       ),

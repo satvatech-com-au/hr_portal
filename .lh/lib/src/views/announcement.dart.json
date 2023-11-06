@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/src/views/announcement.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1698673577641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1698673577641,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:hr_app/src/views/create_annoucement.dart';\n\nclass AnnouncementScreen extends StatelessWidget {\n  const AnnouncementScreen({super.key});\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: const Text('Announcements'),\n      ),\n      body: ListView.builder(\n        itemCount: announcements.length,\n        itemBuilder: (context, index) {\n          final announcement = announcements[index];\n          return AnnouncementItem(\n            announcement: announcement,\n          );\n        },\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {\n          Navigator.push(\n              context,\n              MaterialPageRoute(\n                  builder: (context) => const CreateAnnouncementScreen()));\n        },\n        child: const Icon(Icons.add),\n      ),\n    );\n  }\n}\n\nclass AnnouncementItem extends StatelessWidget {\n  final Announcement announcement;\n\n  const AnnouncementItem({\n    Key? key,\n    required this.announcement,\n  }) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    final formattedDate =\n        \"${announcement.date.year}-${announcement.date.month}-${announcement.date.day}\";\n\n    return Card(\n      child: Padding(\n        padding: const EdgeInsets.all(16.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            Text(\n              announcement.title,\n              style: const TextStyle(\n                fontSize: 20.0,\n                fontWeight: FontWeight.bold,\n              ),\n            ),\n            const SizedBox(height: 8.0),\n            Text(\n              announcement.description,\n            ),\n            const SizedBox(height: 8.0),\n            Text(\n              formattedDate,\n              style: const TextStyle(\n                fontSize: 12.0,\n                color: Colors.grey,\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

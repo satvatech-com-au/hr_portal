@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/src/views/holidays.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1698673577641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1698673577641,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:hr_app/src/views/create_holiday.dart';\n\nclass HolidayScreen extends StatefulWidget {\n  const HolidayScreen({Key? key}) : super(key: key);\n\n  @override\n  _HolidayScreenState createState() => _HolidayScreenState();\n}\n\nclass _HolidayScreenState extends State<HolidayScreen> {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: const Text('Holidays'),\n      ),\n      body: ListView.builder(\n        itemCount: holidays.length,\n        itemBuilder: (context, index) {\n          final holiday = holidays[index];\n          return HolidayItem(\n            title: holiday.title,\n            date: holiday.date,\n          );\n        },\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: () {\n          Navigator.push(\n              context,\n              MaterialPageRoute(\n                  builder: (context) => const CreateHolidayScreen()));\n        },\n        child: const Icon(Icons.add),\n      ),\n    );\n  }\n}\n\nclass HolidayItem extends StatelessWidget {\n  final String title;\n  final String date;\n\n  const HolidayItem({\n    Key? key,\n    required this.title,\n    required this.date,\n  }) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Card(\n      child: Padding(\n        padding: const EdgeInsets.all(16.0),\n        child: Column(\n          crossAxisAlignment: CrossAxisAlignment.start,\n          children: [\n            Text(\n              title,\n              style: const TextStyle(\n                fontSize: 20.0,\n                fontWeight: FontWeight.bold,\n              ),\n            ),\n            const SizedBox(height: 8.0),\n            Text(\n              date,\n              style: const TextStyle(\n                fontSize: 12.0,\n                color: Colors.grey,\n              ),\n            ),\n          ],\n        ),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

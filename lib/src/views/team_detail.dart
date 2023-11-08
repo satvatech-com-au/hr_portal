@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:hr_app/src/models/member.dart';
-import 'package:hr_app/src/views/member_detail.dart';
+import 'package:hr_app/src/views/employee_info_screen.dart';
 
 class TeamDetailScreen extends StatelessWidget {
   const TeamDetailScreen({
@@ -23,7 +23,7 @@ class TeamDetailScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            MemberDetailScreen(member: members[index])));
+                            EmployeeInfoScreen(member: members[index])));
               },
               child: ListTile(
                 leading: const Icon(

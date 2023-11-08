@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:hr_app/src/views/create_annoucement.dart';
-import 'package:hr_app/src/views/create_member.dart';
+import 'package:hr_app/src/views/create_employee.dart';
 import 'package:hr_app/src/views/leave_applications.dart';
 import 'package:hr_app/src/views/members.dart';
 import 'package:hr_app/src/views/teams.dart';
@@ -99,7 +99,7 @@ class Home extends StatelessWidget {
                 Expanded(
                   child: OptionCard(
                     imageUrl: 'assets/docs.png',
-                    text: 'Manage Applications',
+                    text: 'Leave Applications',
                     route: LeaveApplicationScreen(),
                   ),
                 )
@@ -123,13 +123,13 @@ class Home extends StatelessWidget {
                 Expanded(
                   child: OptionCard2(
                     figure: 23,
-                    parameter: 'Members present',
+                    parameter: 'Employees present',
                   ),
                 ),
                 Expanded(
                   child: OptionCard2(
                     figure: 4,
-                    parameter: 'Members absent',
+                    parameter: 'Employees absent',
                   ),
                 ),
                 Expanded(
@@ -157,7 +157,7 @@ class Home extends StatelessWidget {
                       MaterialPageRoute(
                           builder: ((context) => const CreateMemberScreen())));
                 },
-                child: const Text('Create members')),
+                child: const Text('Create employee')),
             const SizedBox(
               height: 20,
             ),

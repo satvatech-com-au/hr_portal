@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/src/widgets/data_tile.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1699446258799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1699446258799,
+            "name": "Commit-0",
+            "content": "\nimport 'package:flutter/material.dart';\n\nclass DataTile extends StatelessWidget {\n  final String parameter;\n  final String data;\n  const DataTile({super.key, required this.parameter, required this.data});\n\n  @override\n  Widget build(BuildContext context) {\n    return Column(\n      crossAxisAlignment: CrossAxisAlignment.start,\n      children: [\n        Text(\n          parameter,\n          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),\n        ),\n        Container(\n          width: double.infinity,\n          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),\n          decoration: BoxDecoration(\n            border: Border.all(color: Colors.grey, width: 2),\n          ),\n          child: Text(\n            data,\n            style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 20),\n          ),\n        ),\n      ],\n    );\n  }\n}"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/src/views/calender.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1699351713440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1699351713440,
+            "name": "Commit-0",
+            "content": "// ignore_for_file: public_member_api_docs, sort_constructors_first\nimport 'package:flutter/material.dart';\nimport 'package:hr_app/src/models/activity.dart';\nimport 'package:hr_app/src/views/create_activity.dart';\n\nclass Calender extends StatelessWidget {\n  const Calender({\n    Key? key,\n  }) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Stack(children: [\n      ListView.builder(\n        shrinkWrap: true,\n        itemCount: activities.length,\n        itemBuilder: (context, index) {\n          final activity = activities[index];\n          return ListTile(\n            leading: const Icon(\n              Icons.notifications,\n            ),\n            title: Text(\n              activity.title,\n              style: const TextStyle(\n                fontSize: 18,\n                fontWeight: FontWeight.bold,\n              ),\n            ),\n            subtitle: Text(\n              '${activity.date} - ${activity.time}',\n              style: const TextStyle(\n                fontSize: 14,\n              ),\n            ),\n          );\n        },\n      ),\n      Positioned(\n          bottom: 10,\n          right: 30,\n          child: Container(\n            decoration: BoxDecoration(\n                color: Colors.purpleAccent.shade100,\n                borderRadius: BorderRadius.circular(10)),\n            child: IconButton(\n              icon: const Icon(Icons.add),\n              onPressed: () {\n                Navigator.push(\n                    context,\n                    MaterialPageRoute(\n                        builder: (context) => const AddActivityScreen()));\n              },\n            ),\n          ))\n    ]);\n  }\n}\n"
+        }
+    ]
+}

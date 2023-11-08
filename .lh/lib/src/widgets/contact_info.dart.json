@@ -1,0 +1,42 @@
+{
+    "sourceFile": "lib/src/widgets/contact_info.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1699446258799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699446695312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,13 +44,12 @@\n                 DataTile(\n                     parameter: 'Emergency contact name',\n                     data: widget.member.emergencyContactName),\n                 const SizedBox(height: 10),\n-                Text(\n-                  'Emergency Contact Relationship: ${widget.member.emergencyContactRelationship}',\n-                  style: const TextStyle(\n-                      fontSize: 18, fontWeight: FontWeight.bold),\n-                ),\n+                \n+                DataTile(\n+                    parameter: 'Emergency contact relationship',\n+                    data: widget.member.emergencyContactRelationship),\n                 const SizedBox(height: 10),\n                 Text(\n                   'Emergency Contact Number: ${widget.member.emergencyContactNumber}',\n                   style: const TextStyle(\n"
+                },
+                {
+                    "date": 1699446717425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,13 +48,12 @@\n                 DataTile(\n                     parameter: 'Emergency contact relationship',\n                     data: widget.member.emergencyContactRelationship),\n                 const SizedBox(height: 10),\n-                Text(\n-                  'Emergency Contact Number: ${widget.member.emergencyContactNumber}',\n-                  style: const TextStyle(\n-                      fontSize: 18, fontWeight: FontWeight.bold),\n-                ),\n+             \n+                DataTile(\n+                    parameter: 'Emergency contact number',\n+                    data: widget.member.emergencyContactNumber),\n                 const SizedBox(height: 10),\n                 Text(\n                   'Alternate Number: ${widget.member.alternateNumber}',\n                   style: const TextStyle(\n"
+                },
+                {
+                    "date": 1699446760303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-\n import 'package:flutter/material.dart';\n import 'package:hr_app/src/models/member.dart';\n import 'package:hr_app/src/widgets/data_tile.dart';\n \n@@ -39,21 +38,18 @@\n           ),\n           if (!isCollapsed)\n             Column(\n               children: [\n-                DataTile\n-            (parameter: 'Address', data: widget.member.address),\n+                DataTile(parameter: 'Address', data: widget.member.address),\n                 const SizedBox(height: 10),\n                 DataTile(\n                     parameter: 'Emergency contact name',\n                     data: widget.member.emergencyContactName),\n                 const SizedBox(height: 10),\n-                \n                 DataTile(\n                     parameter: 'Emergency contact relationship',\n                     data: widget.member.emergencyContactRelationship),\n                 const SizedBox(height: 10),\n-             \n                 DataTile(\n                     parameter: 'Emergency contact number',\n                     data: widget.member.emergencyContactNumber),\n                 const SizedBox(height: 10),\n"
+                },
+                {
+                    "date": 1699446790863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,11 @@\n           ),\n           if (!isCollapsed)\n             Column(\n               children: [\n+                DataTile(\n+                    parameter: 'Phone',\n+                    data: widget.member.phone),\n                 DataTile(parameter: 'Address', data: widget.member.address),\n                 const SizedBox(height: 10),\n                 DataTile(\n                     parameter: 'Emergency contact name',\n"
+                },
+                {
+                    "date": 1699446835664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,9 @@\n           if (!isCollapsed)\n             Column(\n               children: [\n                 DataTile(parameter: 'Phone', data: widget.member.phone),\n+                 const SizedBox(height: 10),\n                 DataTile(parameter: 'Address', data: widget.member.address),\n                 const SizedBox(height: 10),\n                 DataTile(\n                     parameter: 'Emergency contact name',\n"
+                },
+                {
+                    "date": 1699446881082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,8 +59,11 @@\n                   'Alternate Number: ${widget.member.alternateNumber}',\n                   style: const TextStyle(\n                       fontSize: 18, fontWeight: FontWeight.bold),\n                 ),\n+                  DataTile(\n+                    parameter: 'Alternate contact',\n+                    data: widget.member.alternateNumber),\n               ],\n             )\n         ],\n       ),\n"
+                }
+            ],
+            "date": 1699446258799,
+            "name": "Commit-0",
+            "content": "\nimport 'package:flutter/material.dart';\nimport 'package:hr_app/src/models/member.dart';\nimport 'package:hr_app/src/widgets/data_tile.dart';\n\nclass ContactInfoTab extends StatefulWidget {\n  final Member member;\n  const ContactInfoTab({\n    Key? key,\n    required this.member,\n  }) : super(key: key);\n\n  @override\n  State<ContactInfoTab> createState() => _ContactInfoTabState();\n}\n\nclass _ContactInfoTabState extends State<ContactInfoTab> {\n  bool isCollapsed = true;\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      padding: const EdgeInsets.all(15),\n      child: Column(\n        crossAxisAlignment: CrossAxisAlignment.start,\n        children: <Widget>[\n          ListTile(\n            title: const Text(\n              'Contact information',\n              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),\n            ),\n            trailing: IconButton(\n                onPressed: () {\n                  setState(() {\n                    isCollapsed = !isCollapsed;\n                  });\n                },\n                icon:\n                    Icon(isCollapsed ? Icons.expand_more : Icons.expand_less)),\n          ),\n          if (!isCollapsed)\n            Column(\n              children: [\n                DataTile\n            (parameter: 'Address', data: widget.member.address),\n                const SizedBox(height: 10),\n                DataTile(\n                    parameter: 'Emergency contact name',\n                    data: widget.member.emergencyContactName),\n                const SizedBox(height: 10),\n                Text(\n                  'Emergency Contact Relationship: ${widget.member.emergencyContactRelationship}',\n                  style: const TextStyle(\n                      fontSize: 18, fontWeight: FontWeight.bold),\n                ),\n                const SizedBox(height: 10),\n                Text(\n                  'Emergency Contact Number: ${widget.member.emergencyContactNumber}',\n                  style: const TextStyle(\n                      fontSize: 18, fontWeight: FontWeight.bold),\n                ),\n                const SizedBox(height: 10),\n                Text(\n                  'Alternate Number: ${widget.member.alternateNumber}',\n                  style: const TextStyle(\n                      fontSize: 18, fontWeight: FontWeight.bold),\n                ),\n              ],\n            )\n        ],\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

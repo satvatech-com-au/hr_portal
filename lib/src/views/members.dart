@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hr_app/src/models/member.dart';
-import 'package:hr_app/src/views/member_detail.dart';
+import 'package:hr_app/src/views/employee_info_screen.dart';
 
 class MembersScreen extends StatelessWidget {
   const MembersScreen({super.key});
@@ -18,7 +18,7 @@ class MembersScreen extends StatelessWidget {
                 onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => MemberDetailScreen(
+                        builder: (context) => EmployeeInfoScreen(
                               member: members[index],
                             ))),
                 child: ListTile(

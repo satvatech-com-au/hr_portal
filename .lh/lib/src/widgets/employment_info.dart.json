@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/src/widgets/employment_info.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1699446258799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1699446258799,
+            "name": "Commit-0",
+            "content": "\nimport 'package:flutter/material.dart';\nimport 'package:hr_app/src/models/member.dart';\nimport 'package:hr_app/src/widgets/data_tile.dart';\n\nclass EmploymentInfoTab extends StatefulWidget {\n  final Member member;\n  const EmploymentInfoTab({\n    Key? key,\n    required this.member,\n  }) : super(key: key);\n\n  @override\n  State<EmploymentInfoTab> createState() => _EmploymentInfoTabState();\n}\n\nclass _EmploymentInfoTabState extends State<EmploymentInfoTab> {\n  bool isCollapsed = true;\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      padding: const EdgeInsets.all(15),\n      child: Column(\n        crossAxisAlignment: CrossAxisAlignment.start,\n        children: <Widget>[\n          ListTile(\n            title: const Text(\n              'Employement information',\n              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),\n            ),\n            trailing: IconButton(\n                onPressed: () {\n                  setState(() {\n                    isCollapsed = !isCollapsed;\n                  });\n                },\n                icon:\n                    Icon(isCollapsed ? Icons.expand_more : Icons.expand_less)),\n          ),\n          if (!isCollapsed)\n            Column(\n              children: [\n                DataTile(\n                    parameter: 'Employee ID', data: widget.member.employeeId),\n                const SizedBox(height: 10),\n                DataTile(parameter: 'Team', data: widget.member.department),\n                const SizedBox(height: 10),\n                DataTile(\n                    parameter: 'Reporting Manager',\n                    data: widget.member.reportingManager),\n                const SizedBox(height: 10),\n                DataTile(\n                    parameter: 'Date of hire', data: widget.member.dateOfHire),\n                const SizedBox(height: 10),\n                DataTile(\n                    parameter: 'Employment type',\n                    data: widget.member.employmentType),\n                const SizedBox(height: 10),\n                DataTile(\n                    parameter: 'Salary or pay rate',\n                    data: widget.member.salaryOrPayRate),\n                const SizedBox(height: 10),\n                DataTile(\n                    parameter: 'Compensation structure',\n                    data: widget.member.compensationStructure),\n                const SizedBox(height: 10),\n                DataTile(\n                    parameter: 'Benefits enrollment',\n                    data: widget.member.benefitsEnrollment),\n              ],\n            )\n        ],\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

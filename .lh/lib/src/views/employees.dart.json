@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/src/views/employees.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1699449547910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1699449547909,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:hr_app/src/models/member.dart';\nimport 'package:hr_app/src/views/employee_info_screen.dart';\n\nclass EmployeesScreen extends StatelessWidget {\n  const EmployeesScreen({super.key});\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n        appBar: AppBar(\n          title: const Text('Company Members'),\n        ),\n        body: ListView.builder(\n            itemCount: members.length,\n            itemBuilder: (context, index) {\n              return GestureDetector(\n                onTap: () => Navigator.push(\n                    context,\n                    MaterialPageRoute(\n                        builder: (context) => EmployeeInfoScreen(\n                              member: members[index],\n                            ))),\n                child: ListTile(\n                  leading: const Icon(\n                    Icons.person,\n                  ),\n                  title: Text(\n                    members[index].name,\n                    style: const TextStyle(\n                      fontSize: 18,\n                      fontWeight: FontWeight.bold,\n                    ),\n                  ),\n                  subtitle: Text(\n                    members[index].role,\n                    style: const TextStyle(\n                      fontSize: 14,\n                    ),\n                  ),\n                ),\n              );\n            }));\n  }\n}\n"
+        }
+    ]
+}

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hr_app/src/models/annoucement.dart';
 import 'package:hr_app/src/views/create_annoucement.dart';
 
 class AnnouncementScreen extends StatelessWidget {
-  const AnnouncementScreen({super.key});
+  const AnnouncementScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +17,36 @@ class AnnouncementScreen extends StatelessWidget {
         itemCount: announcements.length,
         itemBuilder: (context, index) {
           final announcement = announcements[index];
-          return AnnouncementItem(
-            announcement: announcement,
+          final formattedDate =
+              "${announcement.date.year}-${announcement.date.month}-${announcement.date.day}";
+          return Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    announcement.title,
+                    style: const TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8.0),
+                  Text(
+                    announcement.description,
+                  ),
+                  const SizedBox(height: 8.0),
+                  Text(
+                    formattedDate,
+                    style: const TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           );
         },
       ),
@@ -27,51 +58,6 @@ class AnnouncementScreen extends StatelessWidget {
                   builder: (context) => const CreateAnnouncementScreen()));
         },
         child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
-
-class AnnouncementItem extends StatelessWidget {
-  final Announcement announcement;
-
-  const AnnouncementItem({
-    Key? key,
-    required this.announcement,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final formattedDate =
-        "${announcement.date.year}-${announcement.date.month}-${announcement.date.day}";
-
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              announcement.title,
-              style: const TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8.0),
-            Text(
-              announcement.description,
-            ),
-            const SizedBox(height: 8.0),
-            Text(
-              formattedDate,
-              style: const TextStyle(
-                fontSize: 12.0,
-                color: Colors.grey,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

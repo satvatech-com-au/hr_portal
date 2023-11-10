@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:hr_app/src/models/activity.dart';
 
-class AddActivityScreen extends StatefulWidget {
-  const AddActivityScreen({Key? key}) : super(key: key);
+class CreateActivityScreen extends StatefulWidget {
+  const CreateActivityScreen({Key? key}) : super(key: key);
 
   @override
-  _AddActivityScreenState createState() => _AddActivityScreenState();
+  _CreateActivityScreenState createState() => _CreateActivityScreenState();
 }
 
-class _AddActivityScreenState extends State<AddActivityScreen> {
+class _CreateActivityScreenState extends State<CreateActivityScreen> {
   final titleController = TextEditingController();
   DateTime? selectedDate;
   TimeOfDay? selectedTime;
@@ -55,39 +55,15 @@ class _AddActivityScreenState extends State<AddActivityScreen> {
   }
 
   String? _selectedTeam;
-  Widget _buildDropdownField({
-    required String name,
-    required String labelText,
-  }) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 16.0),
-      child: FormBuilderDropdown(
-        onChanged: (value) {
-          setState(() {
-            _selectedTeam = value;
-          });
-        },
-        name: name,
-        decoration: InputDecoration(
-          labelText: labelText,
-          border: const OutlineInputBorder(),
-        ),
-        items: [
-          'Engineering',
-          'UI/UX Design',
-          'Finance',
-          'Marketing',
-          'Sales',
-          'Human Resource'
-        ]
-            .map((team) => DropdownMenuItem(
-                  value: team,
-                  child: Text(team),
-                ))
-            .toList(),
-      ),
-    );
-  }
+
+  final List _teamsList = [
+    'Engineering',
+    'UI/UX Design',
+    'Finance',
+    'Marketing',
+    'Sales',
+    'Human Resource'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -128,9 +104,26 @@ class _AddActivityScreenState extends State<AddActivityScreen> {
             const SizedBox(
               height: 20,
             ),
-            _buildDropdownField(
-              name: 'team',
-              labelText: 'Team',
+            Container(
+              margin: const EdgeInsets.only(bottom: 16.0),
+              child: FormBuilderDropdown(
+                onChanged: (value) {
+                  setState(() {
+                    _selectedTeam = value.toString();
+                  });
+                },
+                name: 'team',
+                decoration: const InputDecoration(
+                  labelText: 'Team',
+                  border: OutlineInputBorder(),
+                ),
+                items: _teamsList
+                    .map((team) => DropdownMenuItem(
+                          value: team,
+                          child: Text(team),
+                        ))
+                    .toList(),
+              ),
             ),
             const SizedBox(
               height: 20,

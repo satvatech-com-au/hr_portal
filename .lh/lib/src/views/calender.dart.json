@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1699351713440,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699448765572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n               onPressed: () {\n                 Navigator.push(\n                     context,\n                     MaterialPageRoute(\n-                        builder: (context) => const AddActivityScreen()));\n+                        builder: (context) => const CreateActivityScreen()));\n               },\n             ),\n           ))\n     ]);\n"
                 }
             ],
             "date": 1699351713440,

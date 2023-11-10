@@ -49,7 +49,7 @@ class Calender extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const AddActivityScreen()));
+                        builder: (context) => const CreateActivityScreen()));
               },
             ),
           ))

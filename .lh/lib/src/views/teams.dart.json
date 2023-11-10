@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/src/views/teams.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1699449616193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1699449616193,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:hr_app/src/models/team.dart';\nimport 'package:hr_app/src/views/team_detail.dart';\n\nclass TeamsScreen extends StatelessWidget {\n  const TeamsScreen({super.key});\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(title: const Text('Team Management')),\n      body: SafeArea(\n        bottom: false,\n        child: Padding(\n          padding: const EdgeInsets.symmetric(horizontal: 15.0),\n          child: GridView.builder(\n            itemCount: teams.length,\n            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(\n                childAspectRatio: 1.4,\n                crossAxisCount: 2,\n                crossAxisSpacing: 20,\n                mainAxisSpacing: 20),\n            itemBuilder: (context, index) {\n              return GestureDetector(\n                onTap: () {\n                  Navigator.push(\n                      context,\n                      MaterialPageRoute(\n                          builder: (context) => const TeamInfoScreen()));\n                },\n                child: Card(\n                  child: Column(\n                    mainAxisAlignment: MainAxisAlignment.spaceAround,\n                    children: [\n                      Image.asset(\n                        'assets/team.png',\n                        height: 60,\n                      ),\n                      Text(teams[index].name),\n                      Text('${teams[index].numberOfMembers} members')\n                    ],\n                  ),\n                ),\n              );\n            },\n          ),\n        ),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

@@ -3,11 +3,23 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1699446258799,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699455509699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         ),\n         Container(\n           width: double.infinity,\n           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),\n-          decoration: BoxDecoration(\n+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),\n             border: Border.all(color: Colors.grey, width: 2),\n           ),\n           child: Text(\n             data,\n"
+                },
+                {
+                    "date": 1699455516046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         Container(\n           width: double.infinity,\n           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),\n           decoration: BoxDecoration(\n-            borderRadius: BorderRadius.circular(20),\n+            borderRadius: BorderRadius.circular(30),\n             border: Border.all(color: Colors.grey, width: 2),\n           ),\n           child: Text(\n             data,\n"
+                },
+                {
+                    "date": 1699455539083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n         Text(\n           parameter,\n           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),\n         ),\n+        SizedBox(height: 5,),\n         Container(\n           width: double.infinity,\n           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),\n           decoration: BoxDecoration(\n"
                 }
             ],
             "date": 1699446258799,

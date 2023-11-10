@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:hr_app/src/models/member.dart';
 import 'package:hr_app/src/views/employee_info_screen.dart';
 
-class TeamDetailScreen extends StatelessWidget {
-  const TeamDetailScreen({
+class TeamInfoScreen extends StatelessWidget {
+  const TeamInfoScreen({
     Key? key,
   }) : super(key: key);
 

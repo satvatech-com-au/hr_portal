@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/src/widgets/custom_textfield.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1699449547909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1699449547909,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:flutter_form_builder/flutter_form_builder.dart';\n\nclass CustomTextField extends StatelessWidget {\n  final String name;\n  final String labelText;\n  final TextEditingController? controller;\n  final TextInputType keyboardType;\n\n  const CustomTextField({\n    super.key,\n    required this.name,\n    required this.labelText,\n    this.controller,\n    this.keyboardType = TextInputType.text,\n  });\n\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      margin: const EdgeInsets.only(bottom: 16.0),\n      child: FormBuilderTextField(\n        name: name,\n        decoration: InputDecoration(\n          labelText: labelText,\n          border: const OutlineInputBorder(),\n        ),\n        keyboardType: keyboardType,\n        controller: controller,\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

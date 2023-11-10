@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:hr_app/src/widgets/custom_textfield.dart';
 
-class CreateMemberScreen extends StatefulWidget {
-  const CreateMemberScreen({Key? key}) : super(key: key);
+class CreateEmployeeScreen extends StatefulWidget {
+  const CreateEmployeeScreen({Key? key}) : super(key: key);
 
   @override
-  _CreateMemberScreenState createState() => _CreateMemberScreenState();
+  _CreateEmployeeScreenState createState() => _CreateEmployeeScreenState();
 }
 
-class _CreateMemberScreenState extends State<CreateMemberScreen>
+class _CreateEmployeeScreenState extends State<CreateEmployeeScreen>
     with SingleTickerProviderStateMixin {
   final GlobalKey<FormBuilderState> _employmentDetailsFormKey =
       GlobalKey<FormBuilderState>();
@@ -138,37 +139,6 @@ class _CreateMemberScreenState extends State<CreateMemberScreen>
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CustomTextField extends StatelessWidget {
-  final String name;
-  final String labelText;
-  final TextEditingController? controller;
-  final TextInputType keyboardType;
-
-  const CustomTextField({
-    super.key,
-    required this.name,
-    required this.labelText,
-    this.controller,
-    this.keyboardType = TextInputType.text,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 16.0),
-      child: FormBuilderTextField(
-        name: name,
-        decoration: InputDecoration(
-          labelText: labelText,
-          border: const OutlineInputBorder(),
-        ),
-        keyboardType: keyboardType,
-        controller: controller,
       ),
     );
   }

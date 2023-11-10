@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1698673577641,
@@ -48,6 +48,14 @@
                 {
                     "date": 1699439897551,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // ignore_for_file: public_member_api_docs, sort_constructors_first\n import 'package:flutter/material.dart';\n import 'package:hr_app/src/views/create_annoucement.dart';\n-import 'package:hr_app/src/views/create_member.dart';\n+import 'package:hr_app/src/views/create_employee.dart';\n import 'package:hr_app/src/views/leave_applications.dart';\n import 'package:hr_app/src/views/members.dart';\n import 'package:hr_app/src/views/teams.dart';\n import 'package:hr_app/src/widgets/option_card.dart';\n"
+                },
+                {
+                    "date": 1699449542656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import 'package:flutter/material.dart';\n import 'package:hr_app/src/views/create_annoucement.dart';\n import 'package:hr_app/src/views/create_employee.dart';\n import 'package:hr_app/src/views/leave_applications.dart';\n-import 'package:hr_app/src/views/members.dart';\n+import 'package:hr_app/src/views/employees.dart';\n import 'package:hr_app/src/views/teams.dart';\n import 'package:hr_app/src/widgets/option_card.dart';\n \n class Home extends StatelessWidget {\n@@ -64,9 +64,9 @@\n                       Text(\n                         '${weekdays[day]}, ${now.day}-${now.month}-${now.year}',\n                         style: const TextStyle(fontSize: 18),\n                       ),\n-                      // Text(time, style: const TextStyle(fontSize: 22)),\n+                      Text(time, style: const TextStyle(fontSize: 22)),\n                     ],\n                   ),\n                 ],\n               ),\n@@ -89,9 +89,9 @@\n                 Expanded(\n                   child: OptionCard(\n                     imageUrl: 'assets/management.png',\n                     text: 'Member Management',\n-                    route: MembersScreen(),\n+                    route: EmployeesScreen(),\n                   ),\n                 ),\n                 SizedBox(\n                   width: 7,\n@@ -154,9 +154,9 @@\n                 onPressed: () {\n                   Navigator.push(\n                       context,\n                       MaterialPageRoute(\n-                          builder: ((context) => const CreateMemberScreen())));\n+                          builder: ((context) => const CreateEmployeeScreen())));\n                 },\n                 child: const Text('Create employee')),\n             const SizedBox(\n               height: 20,\n"
+                },
+                {
+                    "date": 1699449564770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n                       Text(\n                         '${weekdays[day]}, ${now.day}-${now.month}-${now.year}',\n                         style: const TextStyle(fontSize: 18),\n                       ),\n-                      Text(time, style: const TextStyle(fontSize: 22)),\n+                      // Text(time, style: const TextStyle(fontSize: 22)),\n                     ],\n                   ),\n                 ],\n               ),\n"
                 }
             ],
             "date": 1698673577641,

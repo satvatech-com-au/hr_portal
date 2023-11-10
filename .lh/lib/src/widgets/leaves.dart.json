@@ -1,0 +1,26 @@
+{
+    "sourceFile": "lib/src/widgets/leaves.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1699454295849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699454464271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,20 @@\n import 'package:flutter/material.dart';\n import 'package:hr_app/src/models/member.dart';\n import 'package:hr_app/src/widgets/data_tile.dart';\n \n-class Leavestab extends StatefulWidget {\n+class LeavesTab extends StatefulWidget {\n   final Member member;\n-  const Leavestab({\n+  const LeavesTab({\n     Key? key,\n     required this.member,\n   }) : super(key: key);\n \n   @override\n-  State<Leavestab> createState() => _LeavestabState();\n+  State<LeavesTab> createState() => _LeavestabState();\n }\n \n-class _LeavestabState extends State<Leavestab> {\n+class _LeavestabState extends State<LeavesTab> {\n   bool isCollapsed = true;\n   @override\n   Widget build(BuildContext context) {\n     return Container(\n"
+                },
+                {
+                    "date": 1699455714145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,19 +38,9 @@\n           ),\n           if (!isCollapsed)\n             Column(\n               children: [\n-                DataTile(parameter: 'Team', data: widget.member.team),\n-                const SizedBox(height: 10),\n-                DataTile(parameter: 'Role', data: widget.member.role),\n-                const SizedBox(height: 10),\n-                DataTile(\n-                    parameter: 'Years of experience',\n-                    data: widget.member.years.toString()),\n-                const SizedBox(height: 10),\n-                DataTile(parameter: 'Phone', data: widget.member.phone),\n-                const SizedBox(height: 10),\n-                DataTile(parameter: 'Email', data: widget.member.email),\n+                // section to be completed later\n               ],\n             )\n         ],\n       ),\n"
+                }
+            ],
+            "date": 1699454295849,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:hr_app/src/models/member.dart';\nimport 'package:hr_app/src/widgets/data_tile.dart';\n\nclass Leavestab extends StatefulWidget {\n  final Member member;\n  const Leavestab({\n    Key? key,\n    required this.member,\n  }) : super(key: key);\n\n  @override\n  State<Leavestab> createState() => _LeavestabState();\n}\n\nclass _LeavestabState extends State<Leavestab> {\n  bool isCollapsed = true;\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      padding: const EdgeInsets.all(15),\n      child: Column(\n        crossAxisAlignment: CrossAxisAlignment.start,\n        children: <Widget>[\n          ListTile(\n            title: const Text(\n              'Leaves',\n              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),\n            ),\n            trailing: IconButton(\n                onPressed: () {\n                  setState(() {\n                    isCollapsed = !isCollapsed;\n                  });\n                },\n                icon:\n                    Icon(isCollapsed ? Icons.expand_more : Icons.expand_less)),\n          ),\n          if (!isCollapsed)\n            Column(\n              children: [\n                DataTile(parameter: 'Team', data: widget.member.team),\n                const SizedBox(height: 10),\n                DataTile(parameter: 'Role', data: widget.member.role),\n                const SizedBox(height: 10),\n                DataTile(\n                    parameter: 'Years of experience',\n                    data: widget.member.years.toString()),\n                const SizedBox(height: 10),\n                DataTile(parameter: 'Phone', data: widget.member.phone),\n                const SizedBox(height: 10),\n                DataTile(parameter: 'Email', data: widget.member.email),\n              ],\n            )\n        ],\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

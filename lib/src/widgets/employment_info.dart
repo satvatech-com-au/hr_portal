@@ -24,7 +24,7 @@ class _EmploymentInfoTabState extends State<EmploymentInfoTab> {
         children: <Widget>[
           ListTile(
             title: const Text(
-              'Employement information',
+              'Employment details',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             trailing: IconButton(
@@ -44,6 +44,10 @@ class _EmploymentInfoTabState extends State<EmploymentInfoTab> {
                 const SizedBox(height: 10),
                 DataTile(parameter: 'Team', data: widget.member.department),
                 const SizedBox(height: 10),
+                DataTile(parameter: 'Role', data: widget.member.role),
+                const SizedBox(
+                  height: 10,
+                ),
                 DataTile(
                     parameter: 'Reporting Manager',
                     data: widget.member.reportingManager),
@@ -55,17 +59,6 @@ class _EmploymentInfoTabState extends State<EmploymentInfoTab> {
                     parameter: 'Employment type',
                     data: widget.member.employmentType),
                 const SizedBox(height: 10),
-                DataTile(
-                    parameter: 'Salary or pay rate',
-                    data: widget.member.salaryOrPayRate),
-                const SizedBox(height: 10),
-                DataTile(
-                    parameter: 'Compensation structure',
-                    data: widget.member.compensationStructure),
-                const SizedBox(height: 10),
-                DataTile(
-                    parameter: 'Benefits enrollment',
-                    data: widget.member.benefitsEnrollment),
               ],
             )
         ],

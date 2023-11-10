@@ -10,14 +10,21 @@ class DataTile extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          parameter,
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        Padding(
+          padding: const EdgeInsets.only(left: 15),
+          child: Text(
+            parameter,
+            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+        ),
+        const SizedBox(
+          height: 5,
         ),
         Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
             border: Border.all(color: Colors.grey, width: 2),
           ),
           child: Text(

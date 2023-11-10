@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:hr_app/src/views/create_annoucement.dart';
 import 'package:hr_app/src/views/create_employee.dart';
+import 'package:hr_app/src/views/employees.dart';
 import 'package:hr_app/src/views/leave_applications.dart';
-import 'package:hr_app/src/views/members.dart';
 import 'package:hr_app/src/views/teams.dart';
 import 'package:hr_app/src/widgets/option_card.dart';
 
@@ -90,7 +90,7 @@ class Home extends StatelessWidget {
                   child: OptionCard(
                     imageUrl: 'assets/management.png',
                     text: 'Member Management',
-                    route: MembersScreen(),
+                    route: EmployeesScreen(),
                   ),
                 ),
                 SizedBox(
@@ -155,7 +155,8 @@ class Home extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: ((context) => const CreateMemberScreen())));
+                          builder: ((context) =>
+                              const CreateEmployeeScreen())));
                 },
                 child: const Text('Create employee')),
             const SizedBox(

@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1698673577641,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699447612836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,23 +1,54 @@\n import 'package:flutter/material.dart';\n import 'package:hr_app/src/views/create_annoucement.dart';\n \n class AnnouncementScreen extends StatelessWidget {\n-  const AnnouncementScreen({super.key});\n+   \n+  const AnnouncementScreen({super.key, });\n \n   @override\n   Widget build(BuildContext context) {\n+    \n+\n     return Scaffold(\n       appBar: AppBar(\n         title: const Text('Announcements'),\n       ),\n       body: ListView.builder(\n         itemCount: announcements.length,\n         itemBuilder: (context, index) {\n           final announcement = announcements[index];\n-          return AnnouncementItem(\n-            announcement: announcement,\n-          );\n+           final formattedDate =\n+        \"${announcement.date.year}-${announcement.date.month}-${announcement.date.day}\";\n+          return Card(\n+      child: Padding(\n+        padding: const EdgeInsets.all(16.0),\n+        child: Column(\n+          crossAxisAlignment: CrossAxisAlignment.start,\n+          children: [\n+            Text(\n+              announcement.title,\n+              style: const TextStyle(\n+                fontSize: 20.0,\n+                fontWeight: FontWeight.bold,\n+              ),\n+            ),\n+            const SizedBox(height: 8.0),\n+            Text(\n+              announcement.description,\n+            ),\n+            const SizedBox(height: 8.0),\n+            Text(\n+              formattedDate,\n+              style: const TextStyle(\n+                fontSize: 12.0,\n+                color: Colors.grey,\n+              ),\n+            ),\n+          ],\n+        ),\n+      ),\n+    );\n         },\n       ),\n       floatingActionButton: FloatingActionButton(\n         onPressed: () {\n"
+                },
+                {
+                    "date": 1699448763348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\n+import 'package:hr_app/src/models/annoucement.dart';\n import 'package:hr_app/src/views/create_annoucement.dart';\n \n class AnnouncementScreen extends StatelessWidget {\n   const AnnouncementScreen({\n@@ -60,49 +61,4 @@\n       ),\n     );\n   }\n }\n-\n-class AnnouncementItem extends StatelessWidget {\n-  final Announcement announcement;\n-\n-  const AnnouncementItem({\n-    Key? key,\n-    required this.announcement,\n-  }) : super(key: key);\n-\n-  @override\n-  Widget build(BuildContext context) {\n-    final formattedDate =\n-        \"${announcement.date.year}-${announcement.date.month}-${announcement.date.day}\";\n-\n-    return Card(\n-      child: Padding(\n-        padding: const EdgeInsets.all(16.0),\n-        child: Column(\n-          crossAxisAlignment: CrossAxisAlignment.start,\n-          children: [\n-            Text(\n-              announcement.title,\n-              style: const TextStyle(\n-                fontSize: 20.0,\n-                fontWeight: FontWeight.bold,\n-              ),\n-            ),\n-            const SizedBox(height: 8.0),\n-            Text(\n-              announcement.description,\n-            ),\n-            const SizedBox(height: 8.0),\n-            Text(\n-              formattedDate,\n-              style: const TextStyle(\n-                fontSize: 12.0,\n-                color: Colors.grey,\n-              ),\n-            ),\n-          ],\n-        ),\n-      ),\n-    );\n-  }\n-}\n"
                 }
             ],
             "date": 1698673577641,

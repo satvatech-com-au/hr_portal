@@ -26,7 +26,7 @@ class TeamsScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const TeamDetailScreen()));
+                          builder: (context) => const TeamInfoScreen()));
                 },
                 child: Card(
                   child: Column(

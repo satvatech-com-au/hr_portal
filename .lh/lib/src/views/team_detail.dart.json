@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1699439897549,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699453952688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n import 'package:flutter/material.dart';\n import 'package:hr_app/src/models/member.dart';\n import 'package:hr_app/src/views/employee_info_screen.dart';\n \n-class TeamDetailScreen extends StatelessWidget {\n-  const TeamDetailScreen({\n+class TeamInfoScreen extends StatelessWidget {\n+  const TeamInfoScreen({\n     Key? key,\n   }) : super(key: key);\n \n   @override\n"
                 }
             ],
             "date": 1699439897549,

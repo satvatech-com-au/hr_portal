@@ -1,0 +1,38 @@
+{
+    "sourceFile": "lib/learn.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1699556753340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699556776367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n myList = ['ama', 'kofi']\n-print(myList)\n\\ No newline at end of file\n+print(*myList)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699556789049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n myList = ['ama', 'kofi']\n-print(*myList)\n\\ No newline at end of file\n+print(*myList, sep=',')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699556802050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n myList = ['ama', 'kofi']\n-print(*myList, sep=',')\n\\ No newline at end of file\n+print(*myList, sep=', ')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1699556830482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,19 @@\n-myList = ['ama', 'kofi']\n-print(*myList, sep=', ')\n\\ No newline at end of file\n+employee_dict = {\n+    12345: {\n+        \"id\": \"12345\",\n+        \"name\": \"John\", \n+        \"department\": \"Kitchen\"    \n+    },\n+    12458: {\n+        \"id\": \"12458\",\n+        \"name\": \"Paul\", \n+        \"department\": \"House Floor\"    \n+    }\n+}\n+\n+def get_employee_from_dict(id):\n+    return employee_dict[id];\n+\n+\n+print(get_employee_from_dict(12458));\n+\n"
+                },
+                {
+                    "date": 1699556851113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n def get_employee_from_dict(id):\n     return employee_dict[id];\n \n \n-print(get_employee_from_dict(12458));\n+print(get_employee_from_dict(124658));\n \n"
+                }
+            ],
+            "date": 1699556753340,
+            "name": "Commit-0",
+            "content": "myList = ['ama', 'kofi']\nprint(myList)"
+        }
+    ]
+}

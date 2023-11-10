@@ -39,7 +39,13 @@ class _ContactInfoTabState extends State<ContactInfoTab> {
           if (!isCollapsed)
             Column(
               children: [
-                DataTile(parameter: 'Address', data: widget.member.address),
+                DataTile(parameter: 'Phone', data: widget.member.phone),
+                const SizedBox(height: 10),
+                DataTile(parameter: 'Email', data: widget.member.email),
+                const SizedBox(height: 10),
+                DataTile(
+                    parameter: 'Residential address',
+                    data: widget.member.address),
                 const SizedBox(height: 10),
                 DataTile(
                     parameter: 'Emergency contact name',

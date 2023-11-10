@@ -3,11 +3,27 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1699446258799,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1699447612837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         crossAxisAlignment: CrossAxisAlignment.start,\n         children: <Widget>[\n           ListTile(\n             title: const Text(\n-              'Employement information',\n+              'Employment information',\n               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),\n             ),\n             trailing: IconButton(\n                 onPressed: () {\n"
+                },
+                {
+                    "date": 1699454786396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,19 +54,9 @@\n                 DataTile(\n                     parameter: 'Employment type',\n                     data: widget.member.employmentType),\n                 const SizedBox(height: 10),\n-                DataTile(\n-                    parameter: 'Salary or pay rate',\n-                    data: widget.member.salaryOrPayRate),\n-                const SizedBox(height: 10),\n-                DataTile(\n-                    parameter: 'Compensation structure',\n-                    data: widget.member.compensationStructure),\n-                const SizedBox(height: 10),\n-                DataTile(\n-                    parameter: 'Benefits enrollment',\n-                    data: widget.member.benefitsEnrollment),\n+               \n               ],\n             )\n         ],\n       ),\n"
+                },
+                {
+                    "date": 1699454974063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         crossAxisAlignment: CrossAxisAlignment.start,\n         children: <Widget>[\n           ListTile(\n             title: const Text(\n-              'Employment information',\n+              'Employment details',\n               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),\n             ),\n             trailing: IconButton(\n                 onPressed: () {\n"
+                },
+                {
+                    "date": 1699455107957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,10 @@\n                     parameter: 'Employee ID', data: widget.member.employeeId),\n                 const SizedBox(height: 10),\n                 DataTile(parameter: 'Team', data: widget.member.department),\n                 const SizedBox(height: 10),\n+                    DataTile(parameter: 'Role', data: widget.member.role),\n+                    SizedBox(height: 10,),\n                 DataTile(\n                     parameter: 'Reporting Manager',\n                     data: widget.member.reportingManager),\n                 const SizedBox(height: 10),\n"
                 }
             ],
             "date": 1699446258799,

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/src/models/annoucement.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1699448765568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1699448765568,
+            "name": "Commit-0",
+            "content": "\nclass Announcement {\n  final String title;\n  final String description;\n  final DateTime date;\n\n  Announcement({\n    required this.title,\n    required this.description,\n    required this.date,\n  });\n}\n\nList<Announcement> announcements = [\n  Announcement(\n    title: 'Important Meeting',\n    description: 'There will be an important meeting next week.',\n    date: DateTime(2023, 10, 18),\n  ),\n  Announcement(\n    title: 'New Project Launch',\n    description: 'We are excited to announce the launch of our new project.',\n    date: DateTime(2023, 10, 19),\n  ),\n  Announcement(\n    title: 'Company Picnic',\n    description: 'Join us for a fun company picnic on Saturday!',\n    date: DateTime(2023, 10, 20),\n  ),\n  Announcement(\n    title: 'Training Session',\n    description:\n        'A training session on the latest software updates will be held.',\n    date: DateTime(2023, 10, 22),\n  ),\n  Announcement(\n    title: 'Employee of the Month',\n    description:\n        'We are proud to announce our Employee of the Month for September.',\n    date: DateTime(2023, 10, 24),\n  ),\n];\n"
+        }
+    ]
+}

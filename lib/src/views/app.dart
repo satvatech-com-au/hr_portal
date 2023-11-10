@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hr_app/src/views/announcement.dart';
 import 'package:hr_app/src/views/calender.dart';
+import 'package:hr_app/src/views/employees.dart';
 import 'package:hr_app/src/views/holidays.dart';
 import 'package:hr_app/src/views/home.dart';
 import 'package:hr_app/src/views/leave_applications.dart';
-import 'package:hr_app/src/views/members.dart';
 import 'package:hr_app/src/views/more.dart';
 import 'package:hr_app/src/views/notification.dart';
 import 'package:hr_app/src/views/teams.dart';
@@ -130,7 +130,7 @@ class _MainScreenState extends State<MainScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const MembersScreen()));
+                        builder: (context) => const EmployeesScreen()));
               },
             ),
             ListTile(
@@ -146,12 +146,7 @@ class _MainScreenState extends State<MainScreen> {
             ListTile(
               leading: const Icon(Icons.payment),
               title: const Text('Payroll'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MembersScreen()));
-              },
+              onTap: () {},
             ),
             ListTile(
               leading: const Icon(Icons.flight),
